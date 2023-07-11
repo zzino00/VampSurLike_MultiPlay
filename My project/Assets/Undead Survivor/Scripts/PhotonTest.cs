@@ -76,12 +76,19 @@ public class PhotonTest : MonoBehaviourPunCallbacks
     {
         TPlayer = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
         F_Camera.FindPlayer();
-        GameManager.player[GameManager.PlayerNum] = TPlayer.GetComponent<PlayerCharacter>();
-        Debug.Log("PlayerNum: "+ GameManager.PlayerNum);
+        if(TPlayer == PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("MasterClient Spawn");
+            GameManager.player[GameManager.PlayerNum] = TPlayer.GetComponent<PlayerCharacter>();
+        }
+        else if(TPlayer != PhotonNetwork.IsMasterClient)
+        {
+            Debug.Log("Client Spawn");
+        }
+       
+      //  Debug.Log("PlayerNum: "+ GameManager.PlayerNum);
         GameManager.PlayerNum++;
         
-
-
     }
 
     void updatePlayer()
