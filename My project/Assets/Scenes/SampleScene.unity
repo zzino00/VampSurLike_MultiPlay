@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 8139310}
+  MapCenter: {fileID: 415087521}
 --- !u!66 &8139305
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -4741,6 +4742,7 @@ GameObject:
   - component: {fileID: 223212492}
   - component: {fileID: 223212491}
   - component: {fileID: 223212490}
+  - component: {fileID: 223212495}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4899,6 +4901,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223212495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223212489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8113defdcd1b6443828d14f4ff86e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 0
 --- !u!1 &415087517
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,6 +4925,7 @@ GameObject:
   - component: {fileID: 415087518}
   - component: {fileID: 415087520}
   - component: {fileID: 415087519}
+  - component: {fileID: 415087521}
   m_Layer: 0
   m_Name: Center
   m_TagString: Untagged
@@ -4971,6 +4987,19 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &415087521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415087517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b128dec72b94b147a5aacb1bc4ac14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Isvalid: 0
 --- !u!1 &421253348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,6 +5048,7 @@ MonoBehaviour:
   F_Camera: {fileID: 519420034}
   GameManager: {fileID: 788033175}
   TPlayer: {fileID: 0}
+  Enemy: {fileID: 223212495}
 --- !u!1 &425373100
 GameObject:
   m_ObjectHideFlags: 0
@@ -5032,13 +5062,14 @@ GameObject:
   - component: {fileID: 425373103}
   - component: {fileID: 425373102}
   - component: {fileID: 425373101}
+  - component: {fileID: 425373106}
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!70 &425373101
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5190,6 +5221,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &425373106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425373100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8113defdcd1b6443828d14f4ff86e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 0
 --- !u!1 &501950132
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,7 +5410,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 4.7125
+  orthographic size: 4.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10106,6 +10150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 709393781}
+  MapCenter: {fileID: 415087521}
 --- !u!114 &709393781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10348,6 +10393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 1164864029}
+  MapCenter: {fileID: 415087521}
 --- !u!66 &1164864024
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -14813,6 +14859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: {fileID: 1500414276}
+  MapCenter: {fileID: 415087521}
 --- !u!66 &1500414271
 CompositeCollider2D:
   m_ObjectHideFlags: 0

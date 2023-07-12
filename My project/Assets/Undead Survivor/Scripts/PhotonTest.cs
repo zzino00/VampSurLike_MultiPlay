@@ -17,7 +17,7 @@ public class PhotonTest : MonoBehaviourPunCallbacks
     public Follow F_Camera;
     public GameManager GameManager;
     public GameObject TPlayer;
-    
+    public Enemy Enemy;
    // TextMeshProUGUI NickNameText;
   
     void Awake()
@@ -91,10 +91,11 @@ public class PhotonTest : MonoBehaviourPunCallbacks
             GameManager.player[GameManager.PlayerNum].transform.GetChild(0).gameObject.SetActive(false);
             Debug.Log("Area SetActive false");
         }
+        Enemy.SetTarget();
+        
 
-  
         //  Debug.Log("PlayerNum: "+ GameManager.PlayerNum);
-      
+
         GameManager.PlayerNum++;
         
 

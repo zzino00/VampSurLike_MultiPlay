@@ -1,6 +1,7 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Reposition : MonoBehaviour
@@ -13,7 +14,7 @@ public class Reposition : MonoBehaviour
     PhotonTest photonTest;
     GameObject Area;
     GameObject Center;
-
+    public MapCenter MapCenter;
     void OnTriggerExit2D(Collider2D Collision)
     {
      
@@ -50,8 +51,16 @@ public class Reposition : MonoBehaviour
         float DirX = PlayerDir.x < 0 ? -1 : 1;
         float DirY = PlayerDir.y < 0 ? -1 : 1;
 
+    
+        if(MapCenter.enabled)
+        {
+            Center = GameObject.Find("Center");
+        }
+       
+
         
-        Center = GameObject.Find("Center");
+
+
 
         switch (transform.tag)
         {

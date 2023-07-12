@@ -26,6 +26,7 @@ public class PlayerCharacter : MonoBehaviourPunCallbacks, IPunObservable
         NextVec = Vector2.zero;
         MoveLimitX = 15.5f;
         MoveLimitY = 13.5f;
+        speed = 3.0f;
     }
 
    
