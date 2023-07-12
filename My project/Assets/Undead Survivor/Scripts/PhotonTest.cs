@@ -6,6 +6,7 @@ using Photon.Realtime;
 using UnityEngine.UI;
 using TMPro;
 using Photon.Pun.UtilityScripts;
+using Photon.Pun.Demo.PunBasics;
 
 public class PhotonTest : MonoBehaviourPunCallbacks
 {
@@ -15,7 +16,7 @@ public class PhotonTest : MonoBehaviourPunCallbacks
     public GameObject DisconnectPanel;
     public Follow F_Camera;
     public GameManager GameManager;
-    GameObject TPlayer;
+    public GameObject TPlayer;
     
    // TextMeshProUGUI NickNameText;
   
@@ -76,18 +77,30 @@ public class PhotonTest : MonoBehaviourPunCallbacks
     {
         TPlayer = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
         F_Camera.FindPlayer();
-        if(TPlayer == PhotonNetwork.IsMasterClient)
+        GameManager.player[GameManager.PlayerNum] = TPlayer.GetComponent<PlayerCharacter>();
+      
+
+        if (GameManager.player[GameManager.PlayerNum].GetComponent<PhotonView>().ViewID == 1001)
         {
-            Debug.Log("MasterClient Spawn");
-            GameManager.player[GameManager.PlayerNum] = TPlayer.GetComponent<PlayerCharacter>();
+        
+           GameManager.player[GameManager.PlayerNum].transform.GetChild(0).gameObject.SetActive(true);
+            Debug.Log("Area SetActive true");
         }
-        else if(TPlayer != PhotonNetwork.IsMasterClient)
+        else
         {
-            Debug.Log("Client Spawn");
+            GameManager.player[GameManager.PlayerNum].transform.GetChild(0).gameObject.SetActive(false);
+            Debug.Log("Area SetActive false");
         }
-       
-      //  Debug.Log("PlayerNum: "+ GameManager.PlayerNum);
+
+  
+        //  Debug.Log("PlayerNum: "+ GameManager.PlayerNum);
+      
         GameManager.PlayerNum++;
+        
+
+
+      
+           
         
     }
 

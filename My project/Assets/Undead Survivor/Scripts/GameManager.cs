@@ -9,17 +9,10 @@ public class GameManager : MonoBehaviour
     public PlayerCharacter[] player;
     public int PlayerNum;
 
-    public void FindPlayer()
-    {
-        if(PlayerNum<player.Length)
-        {
-            player[PlayerNum] = GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>();
-        }
-      
-    }
+ 
     void Awake()
     {
-     
+        player = new PlayerCharacter[5];
         instance = this;
     }
 }

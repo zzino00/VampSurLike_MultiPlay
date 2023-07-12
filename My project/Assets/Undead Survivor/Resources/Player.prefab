@@ -198,8 +198,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 263088141386219096}
   - {fileID: 7965082991207245487}
+  - {fileID: 263088141386219096}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -383,6 +383,8 @@ MonoBehaviour:
   speed: 3
   InputVec: {x: 0, y: 0}
   PV: {fileID: 6368505084372312434}
+  MoveLimitX: 0
+  MoveLimitY: 0
 --- !u!114 &6368505084372312434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,5 +448,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
   m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
