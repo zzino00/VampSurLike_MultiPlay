@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Reposition : MonoBehaviour
 {
-
+    Collider2D coll;
     Vector3 PlayerPos;
     Vector3 myPos;
     Vector3 PlayerDir;
@@ -15,6 +15,11 @@ public class Reposition : MonoBehaviour
     GameObject Area;
     GameObject Center;
     public MapCenter MapCenter;
+
+    private void Awake()
+    {
+        coll = GetComponent<Collider2D>();
+    }
     void OnTriggerExit2D(Collider2D Collision)
     {
      
@@ -52,10 +57,9 @@ public class Reposition : MonoBehaviour
         float DirY = PlayerDir.y < 0 ? -1 : 1;
 
     
-        if(MapCenter.enabled)
-        {
+      
             Center = GameObject.Find("Center");
-        }
+        
        
 
         
@@ -85,8 +89,11 @@ public class Reposition : MonoBehaviour
 
                 break;
 
-            case "Enemy":
-
+            case "Enemy": // Enemy가 맵밖으로 사라지면 플레이어 근처의 랜덤위치로 이동 
+                if (coll.enabled)
+                {
+                    transform.Translate(PlayerDir * 20 + new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f));                
+                }
                 break;
         }
 
