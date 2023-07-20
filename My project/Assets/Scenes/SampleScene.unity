@@ -4925,7 +4925,6 @@ MonoBehaviour:
   F_Camera: {fileID: 519420034}
   GameManager: {fileID: 788033175}
   TPlayer: {fileID: 0}
-  Enemy: {fileID: 0}
   spawner: {fileID: 1667126671}
 --- !u!1 &426326006
 GameObject:
@@ -9925,6 +9924,8 @@ MonoBehaviour:
   player: []
   PlayerNum: 0
   Spawner: {fileID: 1667126670}
+  GameTime: 0
+  maxGameTime: 20
 --- !u!4 &788033176
 Transform:
   m_ObjectHideFlags: 0
@@ -19126,6 +19127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoint: []
+  SpawnData:
+  - spawnTime: 2
+    spriteType: 0
+    health: 10
+    speed: 1
+  - spawnTime: 1
+    spriteType: 1
+    health: 15
+    speed: 2
   PV: {fileID: 1667126673}
   Target: {fileID: 0}
 --- !u!4 &1667126672
@@ -19695,8 +19705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefabs:
-  - {fileID: 1211843006836414097, guid: d341f57aec364764e950924ce8182ff0, type: 3}
   - {fileID: 943730430336289254, guid: 2cb52180161d6b94296dbff43f25bcb7, type: 3}
+  - {fileID: 3202799995307684624, guid: 235aed920ed11584cb0f236ea3a474de, type: 3}
 --- !u!4 &2129999681
 Transform:
   m_ObjectHideFlags: 0
@@ -19705,7 +19715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129999679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42295098, y: -35.547234, z: -3.8763196}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
