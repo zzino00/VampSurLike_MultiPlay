@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: d64cfcef-b26d-499a-b851-c8dca2401c52
+    AppIdRealtime: 8ad93f9f-a649-4b56-a087-90eeb39150d8
     AppIdFusion: 
-    AppIdChat: 
+    AppIdChat: 8ad93f9f-a649-4b56-a087-90eeb39150d8
     AppIdVoice: 
     AppVersion: 
     UseNameServer: 1
@@ -52,6 +52,16 @@ MonoBehaviour:
   - AddPlayer
   - CheckDeadPlayer
   - AddDeadCount
+  - GetAttackPower
+  - Init
+  - InitAttackPower
+  - InitHealth
+  - InitSpeed
+  - InitSprite
+  - AddPlayerToList
+  - Dead
+  - Resurrect
+  - UpdateLobbyPlayerList
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
